@@ -19,7 +19,7 @@ firebirddb:
 {% for version in versions %}
   '{{ version }}':
     full_name: 'Firebird Db'
-    installer: {{ installers[loop.index] }}
+    installer: {{ installers[loop.index-1] }}
     # install_flags: '/S'
     install_flags: /VERYSILENT /NORESTART /SP- /NOCANCEL /SUPPRESSMSGBOXES
     uninstaller: '{{ PROGRAM_FILES }}\....'
