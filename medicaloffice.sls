@@ -10,15 +10,12 @@
 ] %}
 
 medicaloffice:
-{% for version in versions %}
-  '{{ version }}':
+  'latest':
     full_name: 'Medical Office'
-    installer: '@TODO'
-    # install_flags: '/S'
-    install_flags: /VERYSILENT /NORESTART /SP- /NOCANCEL /SUPPRESSMSGBOXES
-    uninstaller: '{{ PROGRAM_FILES }}\....'
-    uninstall_flags: '/S'
+    installer: "https://fs.bienert.tech/salt/pkgs/medicaloffice/mosetupV_9703.exe"
+    install_flags: "/VERYSILENT /NORESTART /SP- /NOCANCEL /SUPPRESSMSGBOXES"
+#    uninstaller: '{{ PROGRAM_FILES }}\....'
+#    uninstall_flags: '/S'
     msiexec: False
     locale: de_DE
     reboot: False
-{% endfor %}
